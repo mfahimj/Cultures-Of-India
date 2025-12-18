@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+body {
+  background-color: rgb(241, 241, 241);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 23rem;
+}
+
+.logo{
+  background-color: rgba(134, 134, 134, 0.541);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav_el{
+  margin: 1rem;
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+}
+
+.nav_elements {
+  margin: 1rem 0;
+  background-color: rgba(134, 134, 134, 0.541);
+  padding: 10px;
+  border-radius: 5px;
+}
+.emblem {
+  height: 80px;
+  width: 100px;
+}
+
+.hero {
+  background-color: rgba(0, 0, 0, 0.582);
+  background-blend-mode:overlay;
+  background-image: url("media/bgimage.png");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_container {
+  background-color: rgba(240, 248, 255, 0.856);
+  height: 70vh;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;  
+  box-shadow: 2px 2px 8px rgba(22, 22, 22, 0.603);
+}
+
+.hero_content {
+  text-align: center;
+}
+
+.hc1 {
+  font-size: 1.5rem;
+  margin: 50px;
+}
+
+.hc2 {
+  font-size: 5.1rem;
+  font-family: Sekuya;
+}
+
+.line {
+  height: 2px;
+  width: 1200px;
+  background-color: black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  margin: 3rem;
+  margin-top: 6rem;
+}
+
+.btns {
+  padding: 20px;
+  font-size: 0.9rem;
+  width: 140px;
+  height: 70px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  font-family: Poppins;
+}
+
+.info {
+  width: 65vw;
+  margin: auto;
+  position: relative;
+  top: -43px;
+}
+
+.info_container {
+  display: flex;  
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  overflow-x: auto;
+  box-shadow: 2px 2px 8px rgba(22, 22, 22, 0.603);
+}
+
+.info_els {
+  display: flex;
+  gap: 10px;
+}
+
+.info_img {
+  padding: 5px;
+  font-size:30px;
+  color: rgb(255, 55, 55);
+}
+
+.it1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.it2{
+  font-size: 15px;
+}
