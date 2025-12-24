@@ -4,38 +4,42 @@
   font-family: Poppins;
 }
 
-body {
-  background-color: rgb(241, 241, 241);
-}
-
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 0 23rem;
+  gap: 140px;
+  /* margin: 0 23rem; */
+  /* background-color: #B65A3C; */
+  background: url("media/nav_bg.webp");
+  background-size: cover;
+  width: 100%;
 }
 
 .logo{
-  background-color: rgba(134, 134, 134, 0.541);
+  /* background-color: rgba(134, 134, 134, 0.541); */
   padding: 10px;
   border-radius: 5px;
 }
 
 .nav_el{
-  margin: 1rem;
+  margin: 6rem;
+  font-size: 20px;
   text-decoration: none;
-  color: rgb(31, 31, 31);
+  color: rgb(255, 255, 255);
 }
 
 .nav_elements {
   margin: 1rem 0;
-  background-color: rgba(134, 134, 134, 0.541);
+  /* background-color: rgba(134, 134, 134, 0.541); */
   padding: 10px;
   border-radius: 5px;
 }
 .emblem {
   height: 80px;
   width: 100px;
+  color: white;
+  filter: invert(100%) sepia(9%) saturate(7482%) hue-rotate(98deg) brightness(111%) contrast(90%);
 }
 
 .hero {
