@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BHARATVERSE | Cultures of India</title>
+
+    <style>
+      body {
+        margin: 0;
+        background: #111;
+        font-family: Georgia, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .book {
+        width: 900px;
+        height: 550px;
+        perspective: 2200px;
+        position: relative;
+        border: 18px solid #6b3e26;
+        border-radius: 15px;
+        background: #3b2416;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+      }
+
+      .page {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #f3ecd2;
+        transform-origin: left;
+        transition: transform 1s ease;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+
+      .page::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+      }
+
+      .page.flipped {
+        transform: rotateY(-258deg);
+      }
+
+      .page:nth-child(1) {
+        z-index: 30;
+      }
+      .page:nth-child(2) {
+        z-index: 29;
+      }
+      .page:nth-child(3) {
+        z-index: 28;
+      }
+      .page:nth-child(4) {
+        z-index: 27;
+      }
+      .page:nth-child(5) {
+        z-index: 26;
+      }
+      .page:nth-child(6) {
+        z-index: 25;
+      }
+      .page:nth-child(7) {
+        z-index: 24;
+      }
+      .page:nth-child(8) {
+        z-index: 23;
+      }
+      .page:nth-child(9) {
+        z-index: 22;
+      }
+      .page:nth-child(10) {
+        z-index: 21;
+      }
+      .page:nth-child(11) {
+        z-index: 20;
+      }
+      .page:nth-child(12) {
+        z-index: 19;
+      }
+      .page:nth-child(13) {
+        z-index: 18;
+      }
+      .page:nth-child(14) {
+        z-index: 17;
+      }
+      .page:nth-child(15) {
+        z-index: 16;
+      }
+      .page:nth-child(16) {
+        z-index: 15;
+      }
+      .page:nth-child(17) {
+        z-index: 14;
+      }
+      .page:nth-child(18) {
+        z-index: 13;
+      }
+      .page:nth-child(19) {
+        z-index: 12;
+      }
+      .page:nth-child(20) {
+        z-index: 11;
+      }
+      .page:nth-child(21) {
+        z-index: 10;
+      }
+      .page:nth-child(22) {
+        z-index: 9;
+      }
+
+      h1,
+      h2 {
+        color: #4b2a17;
+        margin-top: 0;
+      }
+
+      .page-number {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        font-size: 14px;
+      }
+
+      svg {
+        width: 75%;
+        height: 90%;
+        border: 6px solid #6b3e26;
+        border-radius: 12px;
+      }
+
+      .state {
+        fill: #cfa66a;
+        stroke: #4b2a17;
+        stroke-width: 1;
+        cursor: pointer;
+      }
+      .state:hover {
+        fill: #b07a45;
+      }
+
+      .controls {
+        position: absolute;
+        bottom: -70px;
+        width: 100%;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 18px;
+        background: #6b3e26;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .map {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="book">
+      <!-- COVER -->
+      <div class="page">
+        <h1>BHARATVERSE</h1>
+        <h2>– Cultures of India –</h2>
+        <img src="India Map.png" alt="" class="map" />
+        <div class="page-number">1</div>
+      </div>
+
+      <!-- MAP PAGE -->
+      <div class="page">
+        <h2>Select a State</h2>
+
+        <svg viewBox="0 0 500 600">
+          <!-- NORTH -->
+          <path
+            class="state"
+            d="M200 40 L300 40 L330 110 L220 120 Z"
+            onclick="goToPage(11)"
+          />
+          <text x="230" y="90" font-size="10">J&K</text>
+
+          <path
+            class="state"
+            d="M300 40 L380 50 L420 110 L330 110 Z"
+            onclick="goToPage(12)"
+          />
+          <text x="330" y="90" font-size="10">Ladakh</text>
+
+          <path
+            class="state"
+            d="M240 120 L300 120 L310 160 L250 160 Z"
+            onclick="goToPage(13)"
+          />
+          <text x="255" y="145" font-size="10">Punjab</text>
+
+          <path
+            class="state"
+            d="M300 120 L350 130 L340 180 L300 160 Z"
+            onclick="goToPage(14)"
+          />
+          <text x="305" y="155" font-size="10">Himachal</text>
+
+          <!-- WEST -->
+          <path
+            class="state"
+            d="M130 170 L260 160 L270 280 L150 290 Z"
+            onclick="goToPage(9)"
+          />
+          <text x="170" y="230" font-size="10">Rajasthan</text>
+
+          <path
+            class="state"
+            d="M160 290 L250 280 L260 330 L170 350 Z"
+            onclick="goToPage(10)"
+          />
+          <text x="185" y="325" font-size="10">Gujarat</text>
+
+          <path
+            class="state"
+            d="M180 350 L300 340 L310 430 L190 440 Z"
+            onclick="goToPage(7)"
+          />
+          <text x="220" y="395" font-size="10">Maharashtra</text>
+
+          <path
+            class="state"
+            d="M210 360 L230 360 L235 390 L215 390 Z"
+            onclick="goToPage(8)"
+          />
+          <text x="210" y="410" font-size="10">Goa</text>
+
+          <!-- CENTRAL -->
+          <path
+            class="state"
+            d="M260 260 L380 260 L390 340 L270 340 Z"
+            onclick="goToPage(15)"
+          />
+          <text x="300" y="305" font-size="10">MP</text>
+
+          <path
+            class="state"
+            d="M390 260 L480 260 L490 310 L400 310 Z"
+            onclick="goToPage(16)"
+          />
+          <text x="405" y="295" font-size="10">UP</text>
+
+          <path
+            class="state"
+            d="M350 340 L420 340 L430 400 L360 410 Z"
+            onclick="goToPage(17)"
+          />
+          <text x="360" y="380" font-size="10">Chhattisgarh</text>
+
+          <path
+            class="state"
+            d="M430 310 L500 310 L500 360 L440 360 Z"
+            onclick="goToPage(18)"
+          />
+          <text x="445" y="345" font-size="10">Bihar</text>
+
+          <!-- EAST -->
+          <path
+            class="state"
+            d="M430 360 L490 360 L500 430 L440 430 Z"
+            onclick="goToPage(19)"
+          />
+          <text x="440" y="400" font-size="10">West Bengal</text>
+
+          <path
+            class="state"
+            d="M470 300 L500 300 L500 330 L470 330 Z"
+            onclick="goToPage(20)"
+          />
+          <text x="470" y="295" font-size="10">Sikkim</text>
+
+          <path
+            class="state"
+            d="M500 320 L560 330 L560 390 L500 380 Z"
+            onclick="goToPage(21)"
+          />
+          <text x="505" y="360" font-size="10">Assam</text>
+
+          <path
+            class="state"
+            d="M500 390 L540 390 L540 430 L500 430 Z"
+            onclick="goToPage(22)"
+          />
+          <text x="500" y="425" font-size="10">Meghalaya</text>
+
+          <path
+            class="state"
+            d="M540 390 L580 400 L580 450 L540 430 Z"
+            onclick="goToPage(23)"
+          />
+          <text x="540" y="445" font-size="10">Manipur</text>
+
+          <!-- SOUTH -->
+          <path
+            class="state"
+            d="M280 430 L360 430 L350 500 L290 500 Z"
+            onclick="goToPage(2)"
+          />
+          <text x="300" y="470" font-size="10">Karnataka</text>
+
+          <path
+            class="state"
+            d="M360 430 L420 430 L430 480 L370 500 Z"
+            onclick="goToPage(3)"
+          />
+          <text x="365" y="465" font-size="10">Andhra</text>
+
+          <path
+            class="state"
+            d="M300 500 L330 520 L320 560 L290 530 Z"
+            onclick="goToPage(4)"
+          />
+          <text x="290" y="550" font-size="10">Kerala</text>
+
+          <path
+            class="state"
+            d="M330 520 L380 520 L360 580 L320 560 Z"
+            onclick="goToPage(5)"
+          />
+          <text x="330" y="570" font-size="10">Tamil Nadu</text>
+
+          <path
+            class="state"
+            d="M360 400 L420 400 L420 430 L360 430 Z"
+            onclick="goToPage(6)"
+          />
+          <text x="365" y="420" font-size="10">Telangana</text>
+        </svg>
+
+        <div class="page-number">2</div>
+      </div>
+
+      <!-- STATE PAGES -->
+      <div class="page">
+        <h1>Karnataka</h1>
+        <p>
+          Language & Literature Kannada is one of the oldest classical languages
+          of India. Rich literary heritage including poetry, folk songs, and
+          modern writing. Regional dialects: Tulu, Kodava, Konkani, Beary. Oral
+          storytelling traditions are strong in rural areas. Festivals &
+          Cultural Celebrations Mysuru Dasara: Famous for royal processions,
+          music, dance, art exhibitions. Ugadi: Marks the Kannada New Year;
+          cultural programs and community gatherings. Karaga: Ancient folk
+          celebration emphasizing local traditions. Food Culture Staple grains:
+          Ragi (finger millet), rice Regional variations: North Karnataka:
+          Spicier, jowar-based meals. Coastal Karnataka: Coconut, rice, seafood.
+          Malnad region: Forest produce, mild spices. Famous dishes: Bisi Bele
+          Bath, Ragi Mudde, Akki Roti. Meals traditionally eaten seated on the
+          floor. Clothing & Textiles Ilkal sarees and Mysore silk sarees are
+          iconic. Men traditionally wear panche (dhoti) with shawls. Handloom
+          weaving is a respected occupation. Art, Craft & Folk Traditions Mysore
+          painting: Fine detailing and natural colors. Channapatna toys:
+          Eco-friendly wooden toys. Sandalwood carving and metal crafts. Folk
+          arts like Dollu Kunitha (drum dance). Music, Dance & Performance
+          Yakshagana: Dance-drama combining music, costume, dialogue. Strong
+          Carnatic music tradition. Village-based folk performances preserve
+          oral history. Social Life & Customs Joint family system traditionally
+          common. Respect for elders and community decisions. Village fairs act
+          as cultural hubs. Architecture & Heritage Hampi: Stone architecture
+          and city planning. Mysore Palace: Indo-Saracenic style. Stepwells,
+          forts, and temples as social centers (architecture focus only).
+        </p>
+        <div class="page-number">3</div>
+      </div>
+      <div class="page">
+        <h1>Andhra Pradesh</h1>
+        <p>
+          Language & Literary Culture Telugu is called “Italian of the East” for
+          its musical quality. Rich tradition of poetry, drama, and
+          storytelling. Literature reflects agrarian life and social values.
+          Festivals & Community Events Sankranti: Harvest celebration with kite
+          flying, cattle decoration. Ugadi: Cultural new year celebrations.
+          Village fairs showcasing folk arts and crafts. Food Systems Rice is
+          the staple. Known for bold flavors and spice usage. Famous items:
+          Pulihora, Gongura, Avakaya. Pickle-making is a cultural tradition
+          passed through generations. Clothing & Weaving Uppada, Mangalagiri,
+          Venkatagiri sarees. Men wear dhoti with angavastram. Weaving
+          communities form cultural backbones of towns. Art & Handicrafts
+          Kalamkari: Hand-painted storytelling textiles. Kondapalli toys:
+          Lightweight wooden figures. Stone and metal crafts. Dance, Music &
+          Performance Kuchipudi: Classical dance emphasizing expression and
+          storytelling. Folk dances performed during seasonal celebrations.
+          Music often narrates social stories. Social Customs & Lifestyle Strong
+          agricultural identity. Community cooperation in farming and festivals.
+          Hospitality is a key cultural trait. Architecture & Heritage Ancient
+          stupas and city ruins. Coastal architecture adapted to climate.
+          Historic ports reflect trade culture.
+        </p>
+        <div class="page-number">4</div>
+      </div>
+      <div class="page">
+        <h1>Kerala</h1>
+        <p>
+          Language & Knowledge Traditions Malayalam evolved from Tamil. High
+          literacy led to strong reading and theatre culture. Folk songs related
+          to farming and fishing. Festivals & Cultural Events Onam: Cultural
+          harvest festival with boat races and floral designs. Vishu: New year
+          symbolizing prosperity. Snake boat races showcase teamwork and
+          engineering. Food Culture Rice and coconut dominate. Use of banana
+          leaves for serving. Sadya represents balance and sustainability.
+          Minimal waste cooking practices. Clothing & Handloom Kasavu sarees
+          with gold borders. Men wear mundu. Clothing designed for humid
+          climate. Art, Craft & Martial Traditions Coir crafts, wood carving.
+          Kalaripayattu: One of the world’s oldest martial arts. Mask-making and
+          mural art. Dance & Performance Kathakali: Detailed makeup and
+          gestures. Mohiniyattam: Graceful and lyrical. Folk theatre forms like
+          Koodiyattam. Social Structure & Customs Historically matrilineal in
+          some communities. Strong local governance and community participation.
+          Emphasis on education and equality. Architecture & Environment
+          Nalukettu homes with courtyards. Houses built for ventilation and
+          rain. Backwaters and canals part of daily life
+        </p>
+        <div class="page-number">5</div>
+      </div>
+      <div class="page">
+        <h1>Tamil Nadu</h1>
+        <p>
+          Language & Civilization Tamil is among the oldest living classical
+          languages. Sangam literature reflects ancient social life. Language
+          pride deeply embedded in identity. Festivals & Cultural Practices
+          Pongal: Agricultural thanksgiving. Tamil New Year. Traditional sports
+          and village arts. Food Heritage Rice-based meals with balance of
+          flavors. Use of tamarind, lentils, spices. Food philosophy emphasizes
+          digestion and health. Meals traditionally eaten with hands. Clothing &
+          Textile Excellence Kanchipuram silk sarees known worldwide. Men wear
+          veshti. Textile towns are cultural centers. Art, Craft & Sculpture
+          Tanjore paintings. Bronze sculptures using lost-wax technique. Stone
+          carving as a centuries-old tradition. Music, Dance & Learning
+          Bharatanatyam: Expressive classical dance. Strong Carnatic music
+          schools. Guru–shishya (teacher–student) tradition. Social Values &
+          Traditions Deep respect for learning and elders. Family-centered
+          social structure. Cultural ceremonies mark life stages. Architecture &
+          Heritage Dravidian architecture with gopurams. Ancient cities like
+          Madurai and Thanjavur. Water tanks and temple towns as urban planning
+          models
+        </p>
+        <div class="page-number">6</div>
+      </div>
+      <div class="page">
+        <h1>Telangana</h1>
+        <p>
+          Language & Literature Telugu is the main language, with Urdu widely
+          spoken in Hyderabad. Telangana literature has a strong folk tradition
+          reflecting rural life, history, and social themes. Festivals & Culture
+          Bathukamma and Bonalu are major festivals. People also celebrate
+          Ugadi, Sankranti, Diwali, and Eid, showing cultural unity. Food
+          Culture Cuisine is spicy and rich in flavors. Popular dishes include
+          Hyderabadi biryani, sarva pindi, jonna rotte, sakinalu, and pachi
+          pulusu. Clothing & Textiles Famous handloom sarees include
+          Pochampally, Gadwal, and Narayanpet. Men traditionally wear dhoti or
+          kurta. Art & Folk Traditions Known for Pochampally ikat weaving,
+          Nirmal paintings, Bidriware crafts, and leather puppetry. Music &
+          Dance Perini Shivatandavam is a classical dance. Folk performances
+          like Oggu Katha and Burrakatha are popular. Social Life & Customs
+          Community bonding, respect for elders, and village traditions are
+          important. Festivals strengthen social unity. Architecture & Heritage
+          Golconda Fort, Charminar, Qutb Shahi Tombs, and Warangal Fort
+          highlight Telangana’s rich history.
+        </p>
+        <div class="page-number">7</div>
+      </div>
+      <div class="page">
+        <h1>Maharashtra</h1>
+        <p>
+          Diversity & Unity: Mumbai’s modern life blends with Pune’s spiritual
+          culture. Tribal communities like Warlis coexist with urban society,
+          united by Marathi pride and reverence for Chhatrapati Shivaji Maharaj.
+          Language & Literature: Marathi is the main language with many
+          dialects. Mumbai’s Bambaiya Hindi is popular. Saint Dnyaneshwar laid
+          the foundation of Marathi literature. Festivals: Ganesh Chaturthi,
+          Gudi Padwa, Ashadhi Ekadashi (Wari pilgrimage), and Pola are widely
+          celebrated. Food Culture: Vada Pav, Misal Pav, Puran Poli, and coastal
+          seafood with Solkadhi are famous. Clothing & Textiles: Nauvari saree,
+          pheta (turban), dhoti-kurta, and Kolhapuri chappals reflect tradition.
+          Art & Folk Traditions: Warli painting, Paithani silk, Sawantwadi toys,
+          and Bidriware are iconic. Music & Dance: Lavani, Powada, Lezim, and
+          Bharud express history and devotion. Architecture & Heritage:
+          Ajanta–Ellora caves, Raigad Fort, CST Station, and Bibi Ka Maqbara
+          showcase rich heritage.
+        </p>
+        <div class="page-number">8</div>
+      </div>
+      <div class="page">
+        <h1>Goa</h1>
+        <p>
+          GOA – The Pearl of the Orient Diversity & Unity: A blend of Indian and
+          Portuguese cultures with strong religious harmony and coastal
+          lifestyle. Language & Literature: Konkani is the official language;
+          Portuguese, English, and Marathi are also used. Festivals: Goa
+          Carnival, Shigmo, Feast of St. Francis Xavier, and Sao Joao are major
+          events. Food Culture: Fish curry rice, Pork Vindaloo, Bebinca, and
+          Xacuti define Goan cuisine. Clothing & Textiles: Kunbi saree, Pano
+          Bhaju, western attire, and fishermen’s traditional wear are common.
+          Art & Folk Traditions: Azulejos tiles, seashell crafts, brass lamps,
+          and bamboo work are popular. Music & Dance: Mando, Dekhni, Ghodemodni,
+          and Portuguese Fado influence Goan culture. Architecture & Heritage:
+          Basilica of Bom Jesus, Portuguese mansions, Fort Aguada, and Shanta
+          Durga Temple stand out.
+        </p>
+        <div class="page-number">9</div>
+      </div>
+      <div class="page">
+        <h1>Rajasthan</h1>
+        <p>
+          RAJASTHAN – The Abode of Kings Diversity & Unity: Royal clans, desert
+          tribes, and warrior traditions unite under strong hospitality values.
+          Language & Literature: Rajasthani dialects like Marwari and Mewari are
+          spoken; Hindi is official. Festivals: Gangaur, Teej, Pushkar Camel
+          Fair, and Desert Festival are vibrant celebrations. Food Culture: Dal
+          Baati Churma, Laal Maas, Ker Sangri, and Ghevar are signature dishes.
+          Clothing & Textiles: Ghagra-choli, pagri (turban), angarkha, and
+          mojari shoes are traditional. Art & Folk Traditions: Blue pottery,
+          Kathputli puppets, miniature paintings, and Meenakari jewelry are
+          famous. Music & Dance: Ghoomar, Kalbelia, Bhavai, and Manganiyar music
+          are deeply rooted in folklore. Architecture & Heritage: Chittorgarh
+          Fort, Hawa Mahal, Jantar Mantar, and Udaipur City Palace are iconic
+        </p>
+        <div class="page-number">10</div>
+      </div>
+      <div class="page">
+        <h1>Gujarat</h1>
+        <p>
+          GUJARAT – The Land of Legends Diversity & Unity: Entrepreneurial
+          spirit blends with Gandhian simplicity and cooperative culture.
+          Language & Literature: Gujarati is the main language; Kutchi and
+          regional accents are common. Festivals: Navratri, Uttarayan (kite
+          festival), Janmashtami, and Rann Utsav are widely celebrated. Food
+          Culture: Gujarati thali, Dhokla, Khandvi, Undhiyu, and Shrikhand
+          dominate cuisine. Clothing & Textiles: Chaniya choli, Kediyu, Bandhani
+          tie-dye, and Patola silk are traditional. Art & Folk Traditions: Kutch
+          embroidery, Lippan Kaam, Ajrakh printing, and Sankheda furniture are
+          notable. Music & Dance: Garba, Dandiya Raas, Dayro, and Siddi Dhamal
+          reflect vibrant traditions. Architecture & Heritage: Rani Ki Vav,
+          Dholavira, Modhera Sun Temple, and Somnath Temple are major landmarks.
+        </p>
+        <div class="page-number">11</div>
+      </div>
+      <div class="page">
+        <h1>Jammu & Kashmir</h1>
+        <p>
+          JAMMU & KASHMIR – Paradise on Earth Diversity & Unity: Jammu & Kashmir
+          reflects a blend of Himalayan, Central Asian, and Indian cultures.
+          Despite regional differences between Jammu, Kashmir Valley, and
+          Ladakh, people are united by strong traditions, spirituality, and love
+          for nature. Language & Literature: Kashmiri, Dogri, and Urdu are major
+          languages. Persian and Sanskrit influences are seen in classical
+          poetry, Sufi literature, and ancient texts like Nilamata Purana.
+          Festivals & Celebrations: Eid, Navroz, Lohri, Baisakhi, and Shivratri
+          are widely celebrated. Seasonal festivals mark harvests and changes in
+          climate. Food Culture: Wazwan cuisine is famous, featuring dishes like
+          Rogan Josh, Yakhni, and Dum Aloo. Kahwa tea and traditional breads are
+          popular. Clothing & Textiles: Pheran is the traditional attire worn
+          with a Kangri (fire pot). Pashmina and woolen shawls are globally
+          renowned. Art, Craft & Folk Traditions: Pashmina weaving,
+          papier-mâché, walnut wood carving, and carpet weaving are signature
+          crafts. Music, Dance & Performance: Rouf and Dumhal are traditional
+          folk dances. Sufi music and poetic storytelling hold cultural
+          importance. Social Life & Customs: Hospitality, respect for elders,
+          and community bonding are central values. Family gatherings and shared
+          meals strengthen social ties. Architecture & Heritage: Shankaracharya
+          Temple, Hazratbal Shrine, Mughal Gardens, and ancient wooden mosques
+          reflect the region’s rich heritage.
+        </p>
+        <div class="page-number">12</div>
+      </div>
+      <div class="page">
+        <h1>Ladakh</h1>
+        <p>
+          Ladakh – The Land of High Passes Language & Literature Ladakhi
+          (Bhoti), Tibetan, and Urdu are commonly spoken. Literature is deeply
+          influenced by Tibetan Buddhism and oral storytelling. Festivals &
+          Cultural Celebrations Hemis Festival, Losar (Ladakhi New Year), and
+          Dosmoche are major festivals featuring masked dances and monastery
+          rituals. Food Culture Staple foods include Thukpa, Tsampa, Skyu, and
+          butter tea. Meals are simple, nutritious, and suited to cold climates.
+          Clothing & Textiles Traditional dress includes the Goncha robe with
+          colorful sashes. Woolen garments are common due to the cold weather.
+          Art, Craft & Folk Traditions Thanka paintings, wood carving, metal
+          work, and handicrafts with Buddhist symbols are prominent. Music,
+          Dance & Performance Cham dance (masked monastery dance) is famous.
+          Folk songs narrate history, religion, and daily life. Social Life &
+          Customs Life is community-oriented, with strong monastic influence.
+          Hospitality and mutual cooperation are core values. Architecture &
+          Heritage Monasteries like Hemis, Thiksey, and Diskit, along with
+          mud-brick houses and stupas, reflect Ladakh’s heritage.
+        </p>
+        <div class="page-number">13</div>
+      </div>
+      <div class="page">
+        <h1>Punjab</h1>
+        <p>
+          Punjab – The Land of Five Rivers Language & Literature Punjabi is the
+          main language, written in Gurmukhi script. Punjabi literature includes
+          heroic ballads, Sufi poetry, and the teachings of Guru Nanak.
+          Festivals & Cultural Celebrations Baisakhi, Lohri, Gurpurabs, and Hola
+          Mohalla are celebrated with music, prayers, and community feasts. Food
+          Culture Punjab is famous for rich, hearty food like Makki di Roti with
+          Sarson da Saag, Butter Chicken, Chole Bhature, and Lassi. Clothing &
+          Textiles Men traditionally wear Kurta-Pajama and Turban, while women
+          wear Salwar-Kameez with Phulkari embroidery. Art, Craft & Folk
+          Traditions Phulkari embroidery, wood carving, and traditional Punjabi
+          handicrafts reflect rural life. Music, Dance & Performance Bhangra and
+          Giddha are energetic folk dances. Punjabi folk music is lively and
+          widely popular. Social Life & Customs Community life is centered
+          around the Gurudwara. Langar (free community meal) symbolizes equality
+          and unity. Architecture & Heritage The Golden Temple in Amritsar,
+          historic Gurudwaras, and forts represent Punjab’s spiritual and
+          historical legacy.
+        </p>
+        <div class="page-number">14</div>
+      </div>
+      <div class="page">
+        <h1>Himachal Pradesh</h1>
+        <p>
+          Himachal Pradesh – The Land of Gods Language & Literature Hindi is
+          widely spoken along with regional dialects like Pahari, Kangri, and
+          Kulluvi. Folk tales and devotional literature are popular. Festivals &
+          Cultural Celebrations Dussehra of Kullu, Losar, Minjar, and local
+          temple fairs are celebrated with rituals, music, and processions. Food
+          Culture Staple foods include Dham, Siddu, Madra, and Tudkiya Bhath.
+          Meals are simple and influenced by the cold climate. Clothing &
+          Textiles Traditional attire includes woolen dresses, caps, and shawls.
+          Colorful Himachali caps represent regional identity. Art, Craft & Folk
+          Traditions Wood carving, wool weaving, and miniature paintings are
+          important crafts. Music, Dance & Performance Folk dances like Nati and
+          Kayang are performed during festivals. Folk music uses drums and wind
+          instruments. Social Life & Customs Village life is community-oriented,
+          with strong faith in local deities and nature. Architecture & Heritage
+          Hill temples, wooden houses, monasteries, and forts reflect Himachal’s
+          cultural heritage.
+        </p>
+        <div class="page-number">15</div>
+      </div>
+      <div class="page">
+        <h1>Madhya Pradesh</h1>
+        <p>
+          Madhya Pradesh – The Heart of India Language & Literature Hindi is the
+          main language, with regional dialects like Bundeli, Malvi, and
+          Bagheli. Folk tales and devotional literature are popular. Festivals &
+          Cultural Celebrations Diwali, Holi, Navratri, and tribal festivals
+          like Bhagoria are celebrated with dance and rituals. Food Culture
+          Common foods include Poha, Dal Bafla, Bhutte ka Kees, and traditional
+          sweets like Jalebi. Clothing & Textiles Men wear Dhoti-Kurta, while
+          women wear Sarees with regional styles. Chanderi and Maheshwari
+          fabrics are famous. Art, Craft & Folk Traditions Gond and Bhil tribal
+          paintings, terracotta work, and handloom weaving are major crafts.
+          Music, Dance & Performance Folk dances like Matki, Tertali, and tribal
+          dances are widely performed during festivals. Social Life & Customs
+          Tribal culture plays an important role. Community gatherings, fairs,
+          and respect for traditions are valued. Architecture & Heritage
+          Khajuraho Temples, Sanchi Stupa, Gwalior Fort, and Mandu reflect the
+          state’s rich history.
+        </p>
+        <div class="page-number">16</div>
+      </div>
+      <div class="page">
+        <h1>Uttar Pradesh</h1>
+        <p>
+          Uttar Pradesh – The Cradle of Indian Civilization Language &
+          Literature Hindi is the main language, with dialects like Awadhi,
+          Braj, Bhojpuri, and Urdu. The state has a rich tradition of poetry,
+          bhakti literature, and classical texts. Festivals & Cultural
+          Celebrations Diwali, Holi, Dussehra, Eid, Kumbh Mela, and Ram Navami
+          are celebrated on a grand scale. Food Culture Famous dishes include
+          Awadhi Biryani, Kebabs, Kachori-Sabzi, Chaat, and sweets like Peda and
+          Jalebi. Clothing & Textiles Men traditionally wear Kurta-Pajama, while
+          women wear Sarees and Salwar-Kameez. Banarasi silk sarees are
+          world-famous. Art, Craft & Folk Traditions Chikankari embroidery,
+          brassware, pottery, and wood carving are popular crafts. Music, Dance
+          & Performance Kathak dance originated here. Classical music traditions
+          and folk songs like Kajri and Birha are popular. Social Life & Customs
+          Religion and family values play a major role. Pilgrimages, fairs, and
+          community festivals strengthen social bonds. Architecture & Heritage
+          The Taj Mahal, Varanasi Ghats, Fatehpur Sikri, and ancient temples
+          reflect the state’s rich heritage.
+        </p>
+        <div class="page-number">17</div>
+      </div>
+      <div class="page">
+        <h1>Chhattisgarh</h1>
+        <p>
+          Chhattisgarh – The Tribal Heartland of India Language & Literature
+          Hindi and Chhattisgarhi are widely spoken. Folk stories, songs, and
+          oral traditions form the core of local literature. Festivals &
+          Cultural Celebrations Bastar Dussehra, Hareli, Pola, and Teeja are
+          important festivals celebrating nature, harvest, and tribal
+          traditions. Food Culture Rice is the staple food. Popular dishes
+          include Chila, Faraa, Aamat, and Bafauri. Clothing & Textiles Men wear
+          Dhoti-Kurta, while women wear Sarees with traditional tribal jewelry.
+          Handwoven fabrics are common. Art, Craft & Folk Traditions Dhokra
+          metal craft, wood carving, bell metal work, and tribal paintings are
+          well-known. Music, Dance & Performance Panthi, Raut Nacha, and Karma
+          are popular folk dances performed during festivals. Social Life &
+          Customs Tribal communities emphasize community living, respect for
+          nature, and simple lifestyles. Architecture & Heritage Ancient temples
+          like Bhoramdeo, tribal villages, and natural heritage sites reflect
+          the state’s culture.
+        </p>
+        <div class="page-number">18</div>
+      </div>
+      <div class="page">
+        <h1>Bihar</h1>
+        <p>
+          Bihar – The Land of Ancient Learning Language & Literature Hindi is
+          widely spoken along with Maithili, Bhojpuri, and Magahi. Bihar has a
+          rich tradition of ancient texts, folk literature, and poetry.
+          Festivals & Cultural Celebrations Chhath Puja, Durga Puja, Holi,
+          Diwali, and Sama-Chakeva are major festivals. Food Culture Staple
+          foods include Litti-Chokha, Sattu-based dishes, Khaja, and Thekua.
+          Clothing & Textiles Men wear Dhoti-Kurta, while women wear Sarees.
+          Madhubani paintings are also reflected in textile designs. Art, Craft
+          & Folk Traditions Madhubani painting, terracotta art, and bamboo
+          crafts are famous. Music, Dance & Performance Folk music like Sohar
+          and Kajri is popular. Traditional dances are performed during
+          festivals. Social Life & Customs Family values, respect for elders,
+          and community bonding are important social aspects. Architecture &
+          Heritage Nalanda University ruins, Mahabodhi Temple (Bodh Gaya), and
+          ancient stupas highlight Bihar’s heritage.
+        </p>
+        <div class="page-number">19</div>
+      </div>
+      <div class="page">
+        <h1>West Bengal</h1>
+        <p>
+          West Bengal – The Cultural Capital of India Language & Literature
+          Bengali is the main language. The state has a rich literary tradition
+          with poets and writers like Rabindranath Tagore and strong roots in
+          poetry, novels, and theatre. Festivals & Cultural Celebrations Durga
+          Puja is the grandest festival. Other important celebrations include
+          Kali Puja, Poila Boishakh (Bengali New Year), and Saraswati Puja. Food
+          Culture Rice and fish dominate Bengali cuisine. Popular dishes include
+          Machher Jhol, Shorshe Ilish, Luchi-Alur Dom, and sweets like Rasgulla
+          and Sandesh. Clothing & Textiles Women traditionally wear Tant and
+          Baluchari sarees, while men wear Dhoti-Kurta. Handloom textiles are
+          widely used. Art, Craft & Folk Traditions Terracotta art (Bishnupur),
+          Kantha embroidery, and clay idol making are famous crafts. Music,
+          Dance & Performance Rabindra Sangeet, Baul music, and folk dances like
+          Chhau are culturally significant. Social Life & Customs Art,
+          literature, and intellectual discussions are central to social life.
+          Family bonding and cultural gatherings are highly valued. Architecture
+          & Heritage Victoria Memorial, Howrah Bridge, Dakshineswar Temple, and
+          Bishnupur temples reflect Bengal’s heritage.
+        </p>
+        <div class="page-number">20</div>
+      </div>
+      <div class="page">
+        <h1>Sikkim</h1>
+        <p>
+          Sikkim – The Land of Mystical Mountains Language & Literature Nepali
+          is widely spoken along with Bhutia and Lepcha. Literature is
+          influenced by Buddhist texts and oral folk traditions. Festivals &
+          Cultural Celebrations Losar, Pang Lhabsol, Saga Dawa, and Dasain are
+          major festivals celebrated with prayers and dances. Food Culture
+          Staple foods include Momos, Thukpa, Gundruk, and fermented foods.
+          Clothing & Textiles Traditional attire includes Bakhu for Bhutia and
+          Lepcha communities. Woolen clothes are common due to cold weather.
+          Art, Craft & Folk Traditions Thanka painting, carpet weaving, wood
+          carving, and handicrafts with Buddhist motifs are popular. Music,
+          Dance & Performance Cham dances and folk songs reflecting nature and
+          spirituality are widely performed. Social Life & Customs People live
+          in harmony with nature and follow peaceful community-based lifestyles.
+          Architecture & Heritage Monasteries like Rumtek and Pemayangtse, along
+          with traditional houses, define Sikkim’s heritage.
+        </p>
+        <div class="page-number">21</div>
+      </div>
+      <div class="page">
+        <h1>Assam</h1>
+        <p>
+          Language & Literature Assamese language (অসমীয়া) is the state
+          language. Rich literary heritage: Bhagavata Purana translation,
+          Srimanta Sankardev’s devotional works, folk songs, and oral
+          storytelling. Festivals & Celebrations Bihu: Bohag (spring), Kati
+          (autumn), Bhogali (harvest). Tribal festivals: Ali Aye Ligang
+          (Mishing), Bwisagu (Bodo), Tuluni (Sumi Naga). Jonbeel Mela:
+          Traditional barter fair. Food Rice, lentils, fish, herbs, and greens.
+          Sweets: pitha and laru during Bihu. Subtle use of mustard oil and
+          indigenous spices. Clothing & Textiles Women: Mekhela Chador; Men:
+          Dhoti-Kurta. Famous silks: Muga, Eri, Pat. Handwoven textiles and
+          traditional jewelry with tribal motifs. Art, Craft & Folk Traditions
+          Handicrafts: Silk weaving, bamboo & cane work, bell metal, pottery.
+          Folk traditions: Ojapali storytelling, Gamusa as cultural symbol.
+          Music & Dance Folk dances: Bihu, Bagurumba (Bodo), Jhumur. Classical:
+          Sattriya (Vaishnavite monasteries). Instruments: Dhol, pepa, gogona,
+          xutuli. Social Life & Customs Community-oriented festivals.
+          Hospitality with Gamusa and local cuisine. Rituals linked to
+          agriculture, nature, and ancestors. Architecture & Heritage Ahom
+          dynasty monuments, Kamakhya Temple. Tribal bamboo-thatch houses;
+          heritage villages like Jonbeel Mela preserve traditions.
+        </p>
+        <div class="page-number">22</div>
+      </div>
+      <div class="page">
+        <h1>Meghalaya</h1>
+        <p>
+          Language & Literature Languages: Khasi, Garo, Jaintia, and English.
+          Oral traditions dominate; folk tales, legends, and songs are passed
+          through generations. Modern literature exists in Khasi and Garo
+          languages. Festivals & Celebrations Nongkrem Dance Festival (Khasi):
+          Harvest thanksgiving with traditional dances. Wangala (Garo):
+          Post-harvest festival featuring drums and community rituals.
+          Behdienkhlam (Jaintia): Purification festival with processions and
+          dances. Food Staple foods: Rice, meat (pork, chicken), fish, leafy
+          greens. Traditional dishes include Jadoh (rice with meat) and
+          Tungrymbai (fermented soybean). Clothing & Textiles Traditional
+          attire: Khasi: Dhara (shawl) and Jymphong (blouse). Garo: Dakmanda
+          (wrap) and ornamented blouses. Handloom weaving with indigenous
+          patterns; vibrant shawls and skirts. Art, Craft & Folk Traditions
+          Basketry, bamboo & cane crafts, pottery. Folk music and dances are
+          integral to festivals. Music & Dance Drums, bamboo flutes, and
+          indigenous string instruments. Dances reflect agricultural cycles and
+          community stories. Social Life & Customs Matrilineal society:
+          Inheritance and lineage through women (Khasi, Garo, Jaintia). Strong
+          clan systems and community cooperation. Respect for nature is central
+          in rituals and daily life. Architecture & Heritage Traditional houses:
+          Khasi: tall wooden houses with steep roofs. Stone and wood temples,
+          sacred groves, and heritage sites.
+        </p>
+        <div class="page-number">23</div>
+      </div>
+      <div class="page">
+        <h1>Manipur</h1>
+        <p>
+          Language & Literature Official language: Meitei (Manipuri), with other
+          tribal languages like Tangkhul, Mao, and Paite. Rich literary
+          tradition in Meitei script, including epics, folklore, and religious
+          texts (Puya). Folk tales and oral storytelling are widely preserved.
+          Festivals & Celebrations Yaoshang: Spring festival coinciding with
+          Holi, marked by sports, dances, and colors. Lai Haraoba: Ritual
+          festival honoring local deities with music, dance, and sacred
+          performances. Cheiraoba: New Year celebration with offerings, feasts,
+          and community events. Food Staples: Rice, fish, meat (pork, chicken),
+          leafy vegetables. Distinct dishes: Eromba (mashed vegetables with
+          fermented fish), Ngari (fermented fish delicacy). Clothing & Textiles
+          Traditional attire: Women: Phanek (sarong) and Innaphi (shawl). Men:
+          Dabu or traditional wrap. Famous handlooms: Manipuri silk, especially
+          Moirang Phee and Lai Haraoba motifs woven fabrics. Art, Craft & Folk
+          Traditions Pottery, cane & bamboo crafts, handwoven textiles. Mask
+          making for ritual dances and traditional embroidery. Music & Dance
+          Classical dance: Manipuri dance, renowned for graceful movements and
+          devotional themes (Radha-Krishna stories). Folk dances: Thabal Chongba
+          (during Yaoshang), ritual dances in Lai Haraoba. Indigenous
+          instruments: Pena (string instrument), pung (drum). Social Life &
+          Customs Community-centric life; clans and family ties are important.
+          Respect for elders, nature, and deities central to rituals. Lai
+          Haraoba preserves religious, cultural, and artistic heritage.
+          Architecture & Heritage Ancient temples and sacred groves. Traditional
+          wooden houses with sloping roofs in rural areas. Kangla Fort in
+          Imphal: historic and cultural landmark.
+        </p>
+        <div class="page-number">24</div>
+      </div>
+
+      <div class="controls">
+        <button onclick="prevPage()">◀ Previous</button>
+        <button onclick="nextPage()">Next ▶</button>
+      </div>
+    </div>
+
+    <script>
+      const pages = document.querySelectorAll(".page");
+      let currentPage = 0;
+
+      function nextPage() {
+        if (currentPage < pages.length) {
+          pages[currentPage].classList.add("flipped");
+          currentPage++;
+        }
+      }
+
+      function prevPage() {
+        if (currentPage > 0) {
+          currentPage--;
+          pages[currentPage].classList.remove("flipped");
+        }
+      }
+
+      function goToPage(n) {
+        pages.forEach((p) => p.classList.remove("flipped"));
+        for (let i = 0; i < n; i++) pages[i].classList.add("flipped");
+        currentPage = n;
+      }
+    </script>
+  </body>
+</html>
