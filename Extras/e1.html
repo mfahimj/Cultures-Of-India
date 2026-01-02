@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Art & Handicrafts of India</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
-    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,37 +25,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>BharatVerse</title>
+
     <style>
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
         font-family: Poppins;
-        scroll-behavior: smooth;
       }
 
-      :root {
-        --c1: rgb(247, 121, 121);
-        --c2: rgb(194, 228, 187);
-        --c3: rgb(225, 226, 177);
-        --c4: rgb(185, 212, 223);
+      body {
+        background: #f4f4f4;
+        color: #333;
       }
 
-      .frame {
-        position: fixed;
-        background-color: white;
-        inset: 0;
-        padding: 20px;
+      .title {
+        font-family: Samarkan;
+        font-size: 70px;
       }
-
-      .page {
-        background: #fff;
-        border-radius: 24px;
-        overflow-y: auto;
-        height: 100%;
-        position: relative;
-      }
-
       .nav_container {
         position: fixed;
         /* top: -20px; */
@@ -134,452 +120,127 @@
         color: inherit;
       }
 
-      .hero {
+      .second_head {
+        background: url("/media/arts.png") center/cover no-repeat;
+        height: 600px;
         position: relative;
-        background: linear-gradient(to bottom, #ffffff00 14%, #000000a9 100%),
-          url("/media/bgimage.png");
-        left: -10px;
-        height: 96vh;
-        width: 99vw;
-        overflow-x: hidden;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        /* background-position: center; */
-        /* display: flex;
-  justify-content: center;
-  align-items: center; */
-        /* animation: blurAnimation both;
-  animation-timeline: view(); */
-      }
-
-      .page::-webkit-scrollbar {
-        display: none;
-      }
-
-      .hero_content {
-        margin-top: 35vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        gap: 20px;
+        justify-content: center;
+        text-align: center;
+        color: white;
       }
 
-      .hc1 {
-        font-size: 25px;
-        color: #fff;
-      }
-
-      .hc2 {
-        font-size: 100px;
-        font-family: Samarkan;
-        color: #fff;
-      }
-
-      .scroll_menu {
-        color: #fff;
-        width: 100vw;
-        margin-top: 20vh;
-        border: 3px solid black;
-        overflow-x: hidden;
-        display: flex;
-        padding: 40px;
-        background: #000000;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.37) 0%,
-          rgba(255, 255, 255, 0) 20%,
-          rgba(255, 255, 255, 0) 80%,
-          rgba(0, 0, 0, 0.36) 100%
-        );
-        mix-blend-mode: screen;
-      }
-
-      .scroll_elements {
-        display: flex;
-        gap: 1em;
-        font-size: 28px;
-        animation: scroll 40s linear infinite;
-        padding-right: 1em;
-      }
-
-      .scroll_menu::after {
+      .second_head::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: #000000;
-        background: linear-gradient(
-          90deg,
-          rgb(0, 0, 0) 0%,
-          rgba(255, 255, 255, 0) 10%,
-          rgba(255, 255, 255, 0) 90%,
-          rgb(0, 0, 0) 100%
-        );
-        mix-blend-mode: multiply;
+        background: rgba(0, 0, 0, 0.099);
+      }
+      .frame {
+        position: fixed;
+        background-color: white;
+        inset: 0;
+        padding: 20px;
       }
 
-      @keyframes scroll {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      .info_els {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        width: 290px;
-        text-align: center;
-        /* border: 1px solid black; */
-      }
-
-      #mid_section {
-        margin: 5rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .title_text {
-        font-size: 50px;
-        font-weight: bold;
-        letter-spacing: -1px;
-        padding: 40px;
-        animation: blurAnimation linear;
-        animation-timeline: view();
-      }
-
-      .mid_cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 30px;
-      }
-
-      .card {
-        padding: 40px;
-        border: none;
-        border-radius: 20px;
-        height: 35rem;
-        width: 30rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        box-shadow: 5px 2px 20px 2px rgb(0, 0, 0);
-        transition: 0.2s ease-in-out;
-      }
-
-      .card:hover {
-        cursor: pointer;
-        transform: translateY(-10px);
-        .card_image_container {
-          letter-spacing: 35px;
-        }
-        transform: scale(1.1);
-        .card_title {
-          padding-top: 300px;
-          font-size: 80px;
-        }
-      }
-
-      .card_image_container {
-        font-size: 20px;
-        font-family: Uncial Antiqua;
-        letter-spacing: 16px;
-        padding: 30px;
-        transition: 0.2s ease-in-out;
-      }
-
-      .card_title {
-        font-size: 65px;
-        font-weight: 560;
-        padding: 30px;
-        font-family: Bonheur Royale;
-        transition: 0.7s cubic-bezier(0.14, 0.82, 0.2, 0.88);
-      }
-
-      .card_button {
-        display: flex;
-        justify-content: center;
-      }
-
-      .card1 {
-        background-color: var(--c2);
-        background: linear-gradient(
-            to bottom,
-            #00000044 0%,
-            #00000044 70%,
-            #000000cc 100%
-          ),
-          url("media/food.png");
-        background-size: cover;
-      }
-      .card2 {
-        background-color: var(--c3);
-        background: linear-gradient(
-            to bottom,
-            #00000044 0%,
-            #00000044 70%,
-            #000000cc 100%
-          ),
-          url("media/fashion.png");
-        background-size: cover;
-      }
-      .card3 {
-        background-color: var(--c4);
-        background: linear-gradient(
-            to bottom,
-            #00000044 0%,
-            #00000044 70%,
-            #000000cc 100%
-          ),
-          url("media/arts.png");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .card1_btn {
-        background-color: #fff;
-        color: var(--c2);
-        font-size: 17px;
-        transition: 0.2s linear;
-      }
-      .card2_btn {
-        background-color: #fff;
-        color: var(--c3);
-        font-size: 17px;
-        transition: 0.2s linear;
-      }
-      .card3_btn {
-        background-color: #fff;
-        color: var(--c4);
-        font-size: 17px;
-        transition: 0.2s linear;
-      }
-
-      @keyframes blurAnimation {
-        0% {
-          filter: blur(10px);
-        }
-
-        35%,
-        80% {
-          filter: blur(0px);
-        }
-
-        100% {
-          filter: blur(10px);
-        }
-      }
-
-      .map_section {
-        width: 90%;
-        height: 90vh;
-        background-color: var(--c3);
-        text-wrap: wrap;
-        margin: auto;
-      }
-
-      .common_section {
-        width: 60vw;
-        margin: 60px auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-      }
-
-      .region1 {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-      }
-
-      .img_r1_box {
-        /* background-color: aqua; */
-        width: 20vw;
-        height: 40vh;
-        border-radius: 25px;
-        border: 1px solid rgba(128, 128, 128, 0.555);
-      }
-
-      .text_r1_box {
-        display: flex;
-        flex-direction: column;
-        /* background-color:burlywood; */
-        border-radius: 25px;
-        width: 35vw;
-        border: 1px solid rgba(128, 128, 128, 0.555);
-      }
-
-      .region2 {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-      }
-
-      .img_r2_box {
-        /* background-color: aqua; */
-        width: 20vw;
-        height: 40vh;
-        border-radius: 25px;
-        border: 1px solid rgba(128, 128, 128, 0.555);
-      }
-
-      .text_r2_box {
-        display: flex;
-        flex-direction: column;
-        /* background-color:burlywood; */
-        border-radius: 25px;
-        width: 35vw;
-        border: 1px solid rgba(128, 128, 128, 0.555);
-      }
-
-      .title {
-        font-size: 40px;
-        padding: 25px;
-        padding-bottom: 5px;
-        font-weight: 500;
-      }
-
-      .caption {
-        font-size: 14px;
-        padding: 25px;
-        padding-top: 0px;
-      }
-
-      .c_box1 {
-        background: linear-gradient(
-            to bottom,
-            #00000000 0%,
-            #00000000 70%,
-            #00000000 100%
-          ),
-          url("media/kumbh.png");
-        background-size: cover;
-        background-position: center;
-      }
-      .c_box2 {
-        background: linear-gradient(
-            to bottom,
-            #00000000 0%,
-            #00000000 70%,
-            #00000000 100%
-          ),
-          url("media/frog.png");
-        background-size: cover;
-        background-position: center;
-      }
-      .c_box3 {
-        background: linear-gradient(
-            to bottom,
-            #00000000 0%,
-            #00000000 70%,
-            #00000000 100%
-          ),
-          url("media/tilak.png");
-        background-size: cover;
-        background-position: center;
-      }
-      .c_box4 {
-        background: linear-gradient(
-            to bottom,
-            #00000000 0%,
-            #00000000 70%,
-            #00000000 100%
-          ),
-          url("media/snake_race.jpeg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .form_section {
-        width: 70vw;
+      .page {
+        background: #fff;
+        border-radius: 24px;
+        overflow-y: auto;
+        height: 100%;
         position: relative;
-        /* height: 70vh; */
-        margin: -100px auto;
-        display: flex;
-        justify-content: center;
-        /* background-color: black; */
-        top: 30vh;
-        z-index: 20;
-        overflow-wrap: normal;
-        border-radius: 25px;
-        background: linear-gradient(to bottom, #00000038 0%, #00000038 100%),
-          url("media/bgimage.png");
-        background-size: cover;
-        background-position: center;
       }
 
-      .form_box {
-        padding: 40px;
-      }
-
-      footer {
-        width: 98vw;
-        /* height: 80vh; */
-        background-color: var(--c1);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-end;
-        position: absolute;
+      header div {
+        position: relative;
         z-index: 1;
-        border-radius: 25px;
       }
 
-      .f_left,
-      .f_right {
-        padding: 30px;
+      header h1 {
+        font-size: 42px;
       }
 
-      #cultureForm {
-        display: flex;
-        flex-direction: column;
+      header p {
+        margin-top: 10px;
+        font-size: 18px;
       }
 
-      input {
-        padding-left: 40px;
-        background: url("media/emblem.svg") no-repeat 12px center, white;
-        background-size: 18px;
+      .section {
+        padding: 40px 8%;
       }
 
-      label {
-        padding-top: 20px;
+      .section h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #bf360c;
       }
 
-      input,
-      select,
-      textarea {
-        width: 30vw;
-        border-radius: 12px;
-        border: none;
-        height: 50px;
+      .filter-box {
+        text-align: center;
+        margin-bottom: 30px;
       }
 
       select {
-        width: 32vw;
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 5px;
       }
 
-      textarea {
-        width: 31vw;
-        height: 90px;
-        padding: 10px;
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
       }
 
-      .submit {
-        margin-top: 20px;
+      .art-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         padding: 20px;
-        width: 200px;
-        background-color: lightgreen;
-        border-color: lightgreen;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .art-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .art-card h3 {
+        margin-bottom: 8px;
+      }
+
+      .art-card p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 25px;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .close {
+        float: right;
+        font-size: 22px;
+        cursor: pointer;
       }
     </style>
   </head>
+
   <body>
     <div class="frame">
       <div class="page">
@@ -610,215 +271,141 @@
             </div>
           </div>
         </header>
+        <div class="second_head">
+          <div>
+            <h1 class="title">Art & Handicrafts of India</h1>
+            <p>Explore state-wise traditional art forms</p>
+          </div>
+        </div>
 
-        <section class="hero">
-          <div class="hero_content">
-            <div class="hc1">WELCOME</div>
-            <div class="hc2">cultures of india</div>
+        <section class="section">
+          <h2>State-Wise Art & Handicrafts</h2>
 
-            <div class="scroll_menu">
-              <div class="scroll_elements">
-                <div class="info_els">
-                  <div class="info_img">
-                    <i class="fa-solid fa-language"></i>
-                  </div>
-                  <div class="info_text">
-                    <div class="it">19,500 Languages</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-paw"></i></div>
-                  <div class="info_text">
-                    <div class="it">2000+ Ethinicites</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-gift"></i></div>
-                  <div class="info_text">
-                    <div class="it">100+ Festivals</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img">
-                    <i class="fa-solid fa-bowl-food"></i>
-                  </div>
-                  <div class="info_text">
-                    <div class="it">300+ Cuisines</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-rug"></i></div>
-                  <div class="info_text">
-                    <div class="it">1,000+ Textiles</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-flag"></i></div>
-                  <div class="info_text">
-                    <div class="it">29 States</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img">
-                    <i class="fa-solid fa-monument"></i>
-                  </div>
-                  <div class="info_text">
-                    <div class="it">1,000+ Forts</div>
-                  </div>
-                </div>
-              </div>
-              <div aria-hidden class="scroll_elements">
-                <div class="info_els">
-                  <div class="info_img">
-                    <i class="fa-solid fa-language"></i>
-                  </div>
-                  <div class="info_text">
-                    <div class="it">19,500 Languages</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-paw"></i></div>
-                  <div class="info_text">
-                    <div class="it">2000+ Ethinicites</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-gift"></i></div>
-                  <div class="info_text">
-                    <div class="it">100+ Festivals</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img">
-                    <i class="fa-solid fa-bowl-food"></i>
-                  </div>
-                  <div class="info_text">
-                    <div class="it">300+ Cuisines</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-rug"></i></div>
-                  <div class="info_text">
-                    <div class="it">1,000+ Textiles</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img"><i class="fa-solid fa-flag"></i></div>
-                  <div class="info_text">
-                    <div class="it">29 States</div>
-                  </div>
-                </div>
-                <div class="info_els">
-                  <div class="info_img">
-                    <i class="fa-solid fa-monument"></i>
-                  </div>
-                  <div class="info_text">
-                    <div class="it">1,000+ Forts</div>
-                  </div>
-                </div>
-              </div>
+          <div class="filter-box">
+            <select id="regionFilter" onchange="filterArt()">
+              <option value="all">All Regions</option>
+              <option value="north">North</option>
+              <option value="south">South</option>
+              <option value="east">East</option>
+              <option value="west">West</option>
+            </select>
+          </div>
+
+          <div class="card-container">
+            <div
+              class="art-card west"
+              onclick="showArt('Rajasthan',
+        'Known for miniature paintings, blue pottery and puppet art.')"
+            >
+              <h3>Rajasthan</h3>
+              <p>Miniature Painting, Blue Pottery</p>
+            </div>
+
+            <div
+              class="art-card east"
+              onclick="showArt('West Bengal',
+        'Kalighat paintings, terracotta sculptures and Dokra metal craft.')"
+            >
+              <h3>West Bengal</h3>
+              <p>Kalighat & Terracotta Art</p>
+            </div>
+
+            <div
+              class="art-card east"
+              onclick="showArt('Bihar',
+        'Madhubani painting known for its geometric patterns and natural dyes.')"
+            >
+              <h3>Bihar</h3>
+              <p>Madhubani Painting</p>
+            </div>
+
+            <div
+              class="art-card east"
+              onclick="showArt('Odisha',
+        'Pattachitra painting and stone carving traditions.')"
+            >
+              <h3>Odisha</h3>
+              <p>Pattachitra & Stone Art</p>
+            </div>
+
+            <div
+              class="art-card west"
+              onclick="showArt('Gujarat',
+        'Bandhani tie-dye, mirror work and textile embroidery.')"
+            >
+              <h3>Gujarat</h3>
+              <p>Bandhani & Embroidery</p>
+            </div>
+
+            <div
+              class="art-card west"
+              onclick="showArt('Maharashtra',
+        'Warli paintings with simple geometric human figures.')"
+            >
+              <h3>Maharashtra</h3>
+              <p>Warli Painting</p>
+            </div>
+
+            <div
+              class="art-card south"
+              onclick="showArt('Tamil Nadu',
+        'Tanjore paintings and bronze temple sculptures.')"
+            >
+              <h3>Tamil Nadu</h3>
+              <p>Tanjore Painting & Sculpture</p>
+            </div>
+
+            <div
+              class="art-card south"
+              onclick="showArt('Karnataka',
+        'Mysore paintings and Channapatna wooden toys.')"
+            >
+              <h3>Karnataka</h3>
+              <p>Mysore Painting & Toys</p>
+            </div>
+
+            <div
+              class="art-card north"
+              onclick="showArt('Jammu & Kashmir',
+        'Papier-mâché crafts, wood carving and carpet weaving.')"
+            >
+              <h3>Jammu & Kashmir</h3>
+              <p>Papier-mâché & Carpets</p>
             </div>
           </div>
         </section>
 
-        <section class="common_section">
-          <div class="region1">
-            <div class="img_r1_box c_box1">
-            </div>
-            <div class="text_r1_box">
-              <div class="title">Kumbh Mela</div>
-              <div class="caption">
-                The Kumbh Mela is so massive that the crowds are visible from
-                space. In early 2025, the Prayagraj Mahakumbh saw millions of
-                pilgrims gather to bathe in the sacred confluence of the Ganges,
-                Yamuna, and Saraswati rivers to wash away their sins.
-              </div>
-            </div>
+        <div class="modal" id="artModal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalText"></p>
           </div>
-          <div class="region2">
-            <div class="text_r2_box">
-              <div class="title">Frog Weddings</div>
-              <div class="caption">
-                In states like Assam and Karnataka, when the monsoon is delayed,
-                villagers perform "Mandooka Parinaya" (frog weddings). It is
-                believed that marrying a pair of frogs with full traditional
-                Hindu rituals will appease the rain gods and end a drought.
-              </div>
-            </div>
-            <div class="img_r2_box c_box2"></div>
-          </div>
-          <div class="region1">
-            <div class="img_r1_box c_box3"></div>
-            <div class="text_r1_box">
-              <div class="title">The Tilak</div>
-              <div class="caption">
-                The colored dot (Bindi) or mark (Tilak) on the forehead isn't
-                just aesthetic. It is placed on the Ajna Chakra (the "third
-                eye"), a point between the eyebrows believed to be the seat of
-                latent energy and concentration.
-              </div>
-            </div>
-          </div>
-          <div class="region2">
-            <div class="text_r2_box">
-              <div class="title">Snake Boat Racing</div>
-              <div class="caption">
-                In the backwaters of Kerala, the Vallam Kali (Snake Boat Race)
-                features 100-foot-long boats manned by over 100 rowers. It is a
-                rhythmic, high-energy tradition that dates back to the naval
-                wars of the 13th century.
-              </div>
-            </div>
-            <div class="img_r2_box c_box4"></div>
-          </div>
-        </section>
+        </div>
 
-        <footer>
-          <div class="f_left">
-            <div class="f_logo_box">
-              <img src="/media/emblem.svg" alt="" />
-            </div>
-            <div class="f_copyright_box">
-              &copy; 2026 BharatVerse. All rights reserved
-            </div>
-          </div>
-          <div class="f_right">
-            <div class="fc1">
-              <div class="f_title_box">SOURCES</div>
-              <div class="f_caption_box">
-                <a href="http://" target="_blank" rel="noopener noreferrer"
-                  >SolidRoad</a
-                >
-                <a href="http://" target="_blank" rel="noopener noreferrer"
-                  >W3Schools</a
-                >
-                <a
-                  href="https://www.geeksforgeeks.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GeeksForGeeks</a
-                >
-              </div>
-            </div>
-            <div class="fc2">
-              <div class="f_title_box">SOCIAL</div>
-              <div class="f_caption_box">
-                <a href="http://" target="_blank" rel="noopener noreferrer"
-                  >Ministry of Culture</a
-                >
-                <a href="http://" target="_blank" rel="noopener noreferrer"
-                  >W3Schools</a
-                >
-                <a
-                  href="https://www.geeksforgeeks.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GeeksForGeeks</a
-                >
-              </div>
-            </div>
-          </div>
-        </footer>
+        <script>
+          function filterArt() {
+            let value = document.getElementById("regionFilter").value;
+            let cards = document.getElementsByClassName("art-card");
+
+            for (let i = 0; i < cards.length; i++) {
+              cards[i].style.display = "block";
+              if (value !== "all" && !cards[i].classList.contains(value)) {
+                cards[i].style.display = "none";
+              }
+            }
+          }
+
+          function showArt(title, text) {
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalText").innerText = text;
+            document.getElementById("artModal").style.display = "flex";
+          }
+
+          function closeModal() {
+            document.getElementById("artModal").style.display = "none";
+          }
+        </script>
       </div>
     </div>
   </body>
