@@ -349,10 +349,13 @@ a {
 
 .map_section {
   width: 90%;
-  height: 90vh;
+  height: 80vh;
   background-color: var(--c3);
   text-wrap: wrap;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .common_section {
