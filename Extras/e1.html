@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Art & Handicrafts of India</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<head>
+    <meta charset="UTF-8">
+    <title>Explore Food of India</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -27,23 +27,67 @@
     />
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Poppins;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins;
+        }
 
-      body {
-        background: #f4f4f4;
-        color: #333;
-      }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-      .title {
-        font-family: Samarkan;
-        font-size: 70px;
-      }
-      .nav_container {
+        header {
+            background-image: url("/media/modak.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+
+
+        .header-content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.095);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+
+        .section {
+            padding: 50px 8%;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 30px;
+            color: #e65100;
+        }
+
+              .nav_container {
         position: fixed;
         /* top: -20px; */
         width: 50vw;
@@ -77,7 +121,6 @@
       .element {
         padding: 0px 10px;
       }
-
       .logo {
         height: 70px;
         width: 50px;
@@ -120,131 +163,86 @@
         color: inherit;
       }
 
-      .second_head {
-        background: url("/media/arts.png") center/cover no-repeat;
-        height: 600px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-      }
+    
+        .food-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
 
-      .second_head::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.099);
-      }
-      .frame {
-        position: fixed;
-        background-color: white;
-        inset: 0;
-        padding: 20px;
-      }
+        .food-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
 
-      .page {
-        background: #fff;
-        border-radius: 24px;
-        overflow-y: auto;
-        height: 100%;
-        position: relative;
-      }
+        .food-card:hover {
+            transform: translateY(-10px);
+        }
 
-      header div {
-        position: relative;
-        z-index: 1;
-      }
+        .food-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-      header h1 {
-        font-size: 42px;
-      }
+        .food-card p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
 
-      header p {
-        margin-top: 10px;
-        font-size: 18px;
-      }
+        .btn {
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #ff6f00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
 
-      .section {
-        padding: 40px 8%;
-      }
+        .btn:hover {
+            background: #e65100;
+        }
 
-      .section h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #bf360c;
-      }
 
-      .filter-box {
-        text-align: center;
-        margin-bottom: 30px;
-      }
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
 
-      select {
-        padding: 10px 15px;
-        font-size: 16px;
-        border-radius: 5px;
-      }
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
 
-      .card-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 25px;
-      }
-
-      .art-card {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform 0.3s;
-        cursor: pointer;
-      }
-
-      .art-card:hover {
-        transform: translateY(-8px);
-      }
-
-      .art-card h3 {
-        margin-bottom: 8px;
-      }
-
-      .art-card p {
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .modal {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.7);
-        justify-content: center;
-        align-items: center;
-      }
-
-      .modal-content {
-        background: white;
-        padding: 25px;
-        width: 90%;
-        max-width: 500px;
-        border-radius: 10px;
-        text-align: center;
-      }
-
-      .close {
-        float: right;
-        font-size: 22px;
-        cursor: pointer;
-      }
+        .close {
+            float: right;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .title {
+            font-family: Samarkan;
+            font-size: 70px;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div class="frame">
+<body>
+ <div class="frame">
       <div class="page">
-        <header class="nav_container">
+
+    <header>
+           <header class="nav_container">
           <div class="navbar">
             <div class="nav_el">
               <a href="/main.htm" class="element">Home</a>
@@ -270,143 +268,78 @@
               </div>
             </div>
           </div>
-        </header>
-        <div class="second_head">
-          <div>
-            <h1 class="title">Art & Handicrafts of India</h1>
-            <p>Explore state-wise traditional art forms</p>
-          </div>
+    </header>
+
+  <div class="header-content">
+            <h1 class="title">Explore Food of India</h1>
+            <p>Discover the flavours of India’s diverse culture</p>
         </div>
+    <section class="section">
+        <h2>Regional Cuisines</h2>
 
-        <section class="section">
-          <h2>State-Wise Art & Handicrafts</h2>
+        <div class="food-container">
 
-          <div class="filter-box">
-            <select id="regionFilter" onchange="filterArt()">
-              <option value="all">All Regions</option>
-              <option value="north">North</option>
-              <option value="south">South</option>
-              <option value="east">East</option>
-              <option value="west">West</option>
-            </select>
-          </div>
-
-          <div class="card-container">
-            <div
-              class="art-card west"
-              onclick="showArt('Rajasthan',
-        'Known for miniature paintings, blue pottery and puppet art.')"
-            >
-              <h3>Rajasthan</h3>
-              <p>Miniature Painting, Blue Pottery</p>
+            <div class="food-card">
+                <h3>North India</h3>
+                <p>Rich gravies, wheat-based meals and dairy products.</p>
+                <button class="btn" onclick="showFood('North India',
+                'Butter Chicken, Chole Bhature, Rajma Chawal, Paratha and Lassi and also Gajar Ka Halwa are popular dishes.')">
+                    Explore
+                </button>
             </div>
 
-            <div
-              class="art-card east"
-              onclick="showArt('West Bengal',
-        'Kalighat paintings, terracotta sculptures and Dokra metal craft.')"
-            >
-              <h3>West Bengal</h3>
-              <p>Kalighat & Terracotta Art</p>
+            <div class="food-card">
+                <h3>South India</h3>
+                <p>Rice-based dishes with spicy and tangy flavours.</p>
+                <button class="btn" onclick="showFood('South India',
+                'Dosa, Idli, Sambhar, Rasam, Payasam and coconut-based curries  are famous.')">
+                    Explore
+                </button>
             </div>
 
-            <div
-              class="art-card east"
-              onclick="showArt('Bihar',
-        'Madhubani painting known for its geometric patterns and natural dyes.')"
-            >
-              <h3>Bihar</h3>
-              <p>Madhubani Painting</p>
+            <div class="food-card">
+                <h3>East India</h3>
+                <p>Rice, fish and traditional sweets dominate.</p>
+                <button class="btn" onclick="showFood('East India',
+                'Machher Jhol, Pakhala Bhata, Rasgulla and Chhena Poda are well known.')">
+                    Explore
+                </button>
             </div>
 
-            <div
-              class="art-card east"
-              onclick="showArt('Odisha',
-        'Pattachitra painting and stone carving traditions.')"
-            >
-              <h3>Odisha</h3>
-              <p>Pattachitra & Stone Art</p>
+            <div class="food-card">
+                <h3>West India</h3>
+                <p>Sweet, spicy and snack-rich cuisine.</p>
+                <button class="btn" onclick="showFood('West India',
+                'Dhokla, Pav Bhaji, Vada Pav,Dal Baati Churma, Shrikhand, Ukidcha Modak are popular foods.')">
+                    Explore
+                </button>
             </div>
 
-            <div
-              class="art-card west"
-              onclick="showArt('Gujarat',
-        'Bandhani tie-dye, mirror work and textile embroidery.')"
-            >
-              <h3>Gujarat</h3>
-              <p>Bandhani & Embroidery</p>
-            </div>
 
-            <div
-              class="art-card west"
-              onclick="showArt('Maharashtra',
-        'Warli paintings with simple geometric human figures.')"
-            >
-              <h3>Maharashtra</h3>
-              <p>Warli Painting</p>
-            </div>
+        </div>
+    </section>
 
-            <div
-              class="art-card south"
-              onclick="showArt('Tamil Nadu',
-        'Tanjore paintings and bronze temple sculptures.')"
-            >
-              <h3>Tamil Nadu</h3>
-              <p>Tanjore Painting & Sculpture</p>
-            </div>
-
-            <div
-              class="art-card south"
-              onclick="showArt('Karnataka',
-        'Mysore paintings and Channapatna wooden toys.')"
-            >
-              <h3>Karnataka</h3>
-              <p>Mysore Painting & Toys</p>
-            </div>
-
-            <div
-              class="art-card north"
-              onclick="showArt('Jammu & Kashmir',
-        'Papier-mâché crafts, wood carving and carpet weaving.')"
-            >
-              <h3>Jammu & Kashmir</h3>
-              <p>Papier-mâché & Carpets</p>
-            </div>
-          </div>
-        </section>
-
-        <div class="modal" id="artModal">
-          <div class="modal-content">
+    <div class="modal" id="foodModal">
+        <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h3 id="modalTitle"></h3>
             <p id="modalText"></p>
-          </div>
         </div>
+    </div>
 
-        <script>
-          function filterArt() {
-            let value = document.getElementById("regionFilter").value;
-            let cards = document.getElementsByClassName("art-card");
 
-            for (let i = 0; i < cards.length; i++) {
-              cards[i].style.display = "block";
-              if (value !== "all" && !cards[i].classList.contains(value)) {
-                cards[i].style.display = "none";
-              }
-            }
-          }
-
-          function showArt(title, text) {
+    <script>
+        function showFood(title, text) {
             document.getElementById("modalTitle").innerText = title;
             document.getElementById("modalText").innerText = text;
-            document.getElementById("artModal").style.display = "flex";
-          }
+            document.getElementById("foodModal").style.display = "flex";
+        }
 
-          function closeModal() {
-            document.getElementById("artModal").style.display = "none";
-          }
-        </script>
-      </div>
-    </div>
-  </body>
+        function closeModal() {
+            document.getElementById("foodModal").style.display = "none";
+        }
+    </script>
+</div>
+</div>
+</body>
 </html>
