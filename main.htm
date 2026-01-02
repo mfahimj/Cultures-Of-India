@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,9 +34,9 @@
         <header class="nav_container">
           <div class="navbar">
             <div class="nav_el">
-              <div class="element">Products</div>
-              <div class="element">Customers</div>
-              <div class="element">Careers</div>
+              <a href="main.htm" class="element">Home</a>
+              <a href="#mid_section" class="element">Explore</a>
+              <a href="book.htm" class="element">Booklet</a>
             </div>
             <div class="nav_el">
               <div class="logo_div">
@@ -45,9 +46,9 @@
             <div class="nav_el">
               <div class="element">Sign Up</div>
               <div class="element">
-                <a href="">
-                  <button class="btn">
-                    See a demo
+                <a href="#cultureForm">
+                  <button class="btn" id="formButton">
+                    Feedback
                     <div class="btn_arrow">
                       <i class="fa-solid fa-arrow-down"></i>
                     </div>
@@ -168,7 +169,7 @@
           </div>
         </section>
 
-        <section class="mid_section">
+        <section id="mid_section">
           <div class="title_text">
             Discover every aspect of the<br />diverse culture
           </div>
@@ -215,9 +216,7 @@
           </div>
         </section>
 
-        <section class="map_section">
-          BOOKLET!!
-        </section>
+        <section class="map_section">BOOKLET!!</section>
 
         <section class="common_section">
           <div class="region1">
@@ -357,8 +356,8 @@
               <button type="submit" class="btn submit">
                 Submit Culture
                 <div class="btn_arrow">
-                      <i class="fa-solid fa-arrow-down"></i>
-                  </div>
+                  <i class="fa-solid fa-arrow-down"></i>
+                </div>
               </button>
             </form>
             <script>
@@ -396,14 +395,33 @@
 
         <footer>
           <div class="f_left">
-            <div class="f_logo_box"></div>
-            <div class="f_copyright_box"></div>
+            <div class="f_logo_box">
+              <img src="media/emblem.svg" alt="" />
+            </div>
+            <div class="f_copyright_box">
+              &copy; 2026 BharatVerse. All rights reserved
+            </div>
           </div>
           <div class="f_right">
-            <div class="f_title_box"></div>
-            <div class="f_caption_box"></div>
+            <div class="fc1">
+              <div class="f_title_box">SOURCES</div>
+              <div class="f_caption_box">
+                <a href="http://" target="_blank" rel="noopener noreferrer">SolidRoad</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer">W3Schools</a>
+                <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer">GeeksForGeeks</a>
+              </div>
+            </div>
+            <div class="fc2">
+              <div class="f_title_box">SOCIAL</div>
+              <div class="f_caption_box">
+                <a href="http://" target="_blank" rel="noopener noreferrer">Ministry of Culture</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer">W3Schools</a>
+                <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer">GeeksForGeeks</a>
+              </div>
+            </div>
           </div>
         </footer>
+
       </div>
     </div>
   </body>
