@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BharatVerse Signup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+        body {
+            font-family: Poppins;
+            background: linear-gradient(to right, #ffefba, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .signup-box {
+            width: 380px;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        
+        .signup-box h2 {
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+        
+        .signup-box p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .signup-box label {
+            display: block;
+            text-align: left;
+            margin: 8px 0 4px;
+            font-weight: 500;
+        }
+        
+        .signup-box input,
+        .signup-box select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        
+        .signup-box input:focus,
+        .signup-box select:focus {
+            border-color: #8b0000;
+        }
+        
+        .signup-box button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: #8b0000;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .signup-box button:hover {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-box">
+        <form id="signupForm">
+
+            <label>Full Name:</label><br>
+            <input type="text" id="fullname" placeholder="Full Name" required><br>
+
+            <label>Email Address:</label><br>
+            <input type="email" id="email" placeholder="Email Address" required><br>
+
+            <label>Password:</label><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+
+            <label>Confirm Password:</label><br>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required><br>
+
+            <label>State:</label><br>
+            <input type="text" id="state" placeholder="Your State" required><br>
+
+
+            <input type="submit" value="Sign up">
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("fullname").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let state = document.getElementById("state").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (name === "" || email === "" || state === "" || password === "" || confirmPassword === "") {
+                alert(" Please fill all fields");
+                return;
+            }
+
+            if (password.length < 8) {
+                alert(" Password must be at least 8 characters");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return;
+            }
+
+            alert(" Welcome to BharatVerse!");
+            document.getElementById("signupForm").reset();
+        });
+    </script>
+
+</body>
+
+</html>
