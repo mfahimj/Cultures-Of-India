@@ -121,6 +121,7 @@
         background-position: center;
         height: 600px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -139,6 +140,10 @@
         position: relative;
         z-index: 1;
         padding: 20px;
+      }
+
+      .title {
+        font-family: Samarkan;
       }
 
       .header h1 {
@@ -235,7 +240,7 @@
         <header class="nav_container">
           <div class="navbar">
             <div class="nav_el">
-              <a href="main.htm" class="element">Home</a>
+              <a href="/main.htm" class="element">Home</a>
               <a href="#mid_section" class="element">Explore</a>
               <a href="book.htm" class="element">Booklet</a>
             </div>
@@ -261,7 +266,7 @@
         </header>
         <div>
           <div class="header">
-            <h1>Explore Food of India</h1>
+            <h1 class="title">Explore Food of India</h1>
             <p>Discover the flavours of India’s diverse culture</p>
           </div>
         </div>
