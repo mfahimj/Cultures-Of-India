@@ -508,6 +508,46 @@ footer {
 
 .f_left, .f_right {
   padding: 30px;
+  margin-top: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+ .f_right {
+  padding: 30px;
+  margin-top: 40vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.f_logo {
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+}
+
+.f_copyright_box {
+  padding-left: 90px;
+}
+
+.fc1, .fc2, .fc3,.f_caption_box {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+
+.f_caption_box {
+  gap: 5px;
+  font-weight: 300;
+}
+
+
+.f_title_box {
+  padding: 30px;
+  padding-left: 0;
 }
 
 #cultureForm {
